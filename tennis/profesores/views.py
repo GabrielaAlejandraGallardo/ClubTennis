@@ -38,7 +38,7 @@ def crear_editarProfesores(request,id=0):
         return redirect('listaProfesores')
         
 def eliminar(request, id):
-    bc=Profesor.objects.get(id=id)
+    bc=Profesor.objects.get(pk=id)
     bc.delete()
     return redirect('listaProfesores')
         

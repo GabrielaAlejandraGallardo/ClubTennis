@@ -9,7 +9,7 @@ urlpatterns = [
    # path('socios/nosotros',views.nosotros,name='nosotros'),
     path('sociosCuota/listaSocioCuota',views.listaSocioCuota,name='listaSocioCuota'),
     path('sociosCuota/crear_editarSocioCuota/<int:id>/',views.crear_editarSocioCuota,name='crear_editarSocioCuota'),
-    path('sociosCuota/eliminar/<int:id>',views.eliminar,name='eliminar'),
+    path('sociosCuota/eliminarCuotaSocio/<int:id>',views.eliminarCuotaSocio,name='eliminarCuotaSocio'),
     
 
 

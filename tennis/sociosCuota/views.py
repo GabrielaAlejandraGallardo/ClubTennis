@@ -37,8 +37,8 @@ def crear_editarSocioCuota(request,id=0):
             formulario.save()
         return redirect('listaSocioCuota')
         
-def eliminar(request, id):
-    bc=SocioCuota.objects.get(id=id)
-    bc.delete()
+def eliminarCuotaSocio(request, id):
+    bsc=SocioCuota.objects.get(pk=id)
+    bsc.delete()
     return redirect('listaSocioCuota')
         
