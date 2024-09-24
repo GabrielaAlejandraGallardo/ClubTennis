@@ -41,9 +41,11 @@ phpMyAdmin
 
 PRUEBAS FUNCIONALES BAJO SELENIUM:
 
+PRUEBAS DE PERFOMANCE bajo BlazeMeter:
+
 
 PROGRAMACIÓN CON PYTHON PARA EL ANALISIS DE DATOS: https://cursos.desafiolatam.com/courses/programacion-con-python-para-el-analisis-de-datos
-PRUEBAS DE PERFOMANCE bajo BlazeMeter:
+
 
 
 
