@@ -50,9 +50,6 @@ PROGRAMACIÓN CON PYTHON PARA EL ANALISIS DE DATOS: https://cursos.desafiolatam.
 
 Añadiendo seguridad al template base.html
 
-
-
-
 {% load static %}
 <!Doctype html>
 <html lang="en">
@@ -184,3 +181,6 @@ Añadiendo seguridad al template base.html
     </script>
   </body>
 </html>
+
+
+
