@@ -184,10 +184,3 @@ Añadiendo seguridad al template base.html
     </script>
   </body>
 </html>
-
-
-
-
-
-
-
