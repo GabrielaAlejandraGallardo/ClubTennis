@@ -44,10 +44,13 @@ PRUEBAS FUNCIONALES BAJO SELENIUM:
 PRUEBAS DE PERFOMANCE bajo BlazeMeter:
 
 
-PROGRAMACIÓN CON PYTHON PARA EL ANALISIS DE DATOS: https://cursos.desafiolatam.com/courses/programacion-con-python-para-el-analisis-de-datos
+
 
 
 
 Añadiendo seguridad al template base.html
 
 https://docs.google.com/document/d/13BPGjZfaw2u4iwg7DhpdUMu8e2ESNrrKeT2ixAWnzUQ/edit?usp=sharing
+
+
+PROGRAMACIÓN CON PYTHON PARA EL ANALISIS DE DATOS: https://cursos.desafiolatam.com/courses/programacion-con-python-para-el-analisis-de-datos
