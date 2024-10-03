@@ -41,7 +41,8 @@ phpMyAdmin
 
 PRUEBAS FUNCIONALES BAJO SELENIUM:
 
-PRUEBAS DE PERFOMANCE bajo BlazeMeter:
+PRUEBAS DE PERFOMANCE bajo JMeter:
+TUTORIALhttps://www.youtube.com/watch?v=T1IinYFdSsA&list=PL9qpFd_9rkKULbsCdjpPBbU_n60sFsTbn&index=2
 
 
 
