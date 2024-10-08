@@ -10,6 +10,7 @@ from .forms import JugadorForm
 
 def lista(request):
     jugadores=Jugador.objects.all()
+    
     return render(request,"Crud/listado.html",{'jugadores':jugadores})
 
 

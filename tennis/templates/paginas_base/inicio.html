@@ -1,13 +1,16 @@
 {% extends 'paginas_base/base.html' %}
+{% load static %}
 
 {% block titulo %}Página de Inicio {% endblock titulo %}
 {% block contenido %}
     <div class="p-5 mb-4 bg-light rounded-3 text-secondary ">
         <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">Bienvenido las Sistema de jugadores</h1>
-        <p class="col-md-8 fs-4">Esto es un Crud4 del la sección de jugadores</p>
-        <a class="btn btn-primary btn-lg" href="{% url 'lista' %}" role="button" type="button">Listado de jugadores</a>
-        </div>
-    </div>
+        <h1 class="display-5 fw-bold">Bienvenido al Sistema </h1>
+        <p class="col-md-8 fs-4">Este es el sistema de administración del Club</p>
+     
+      
+            <a><img src="{% static 'logot.png' %}" alt="logo" class=" img-fluid bd-placeholder-img" width="200" height="250" > </a>
+        
+    </div></div>
 
 {% endblock contenido %}
