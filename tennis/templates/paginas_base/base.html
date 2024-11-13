@@ -72,12 +72,13 @@
                 <a class="nav-link protected-link" href="{% url 'listaContratacion' %}" data-protected="true">Contratación</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " id="navbarDropdown" href="{% url 'nosotros' %}"role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link protected-link" href="{% url 'nosotros' %}" data-protected="true">
                   Nosotros
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Ayuda</a>
+                <a class="nav-link protected-link" href="{% url 'listaD' %}" data-protected="true">Deporte
+                </a>
               </li>
             </ul>
             <form class="d-flex">
@@ -107,7 +108,7 @@
     <!-- JavaScript para el manejo de clave -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        const correctPassword = '12345';  // Cambia la clave aquí si es necesario
+        const correctPassword = '1';  // Cambia la clave aquí si es necesario
         const passwordInput = document.getElementById('passwordInput');
         const passwordSubmit = document.getElementById('passwordSubmit');
         const errorMsg = document.getElementById('errorMsg');

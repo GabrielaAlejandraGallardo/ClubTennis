@@ -4,7 +4,7 @@ from django.db import models
 class Organizador(models.Model):
     idOrganizador=models.AutoField(primary_key=True,verbose_name="idOrganizador",db_column='idOrganizador')
     nom=models.CharField(max_length=45,verbose_name="nombre")
-    contacto=models.IntegerField(verbose_name="contacto",max_length=20)
+    contacto=models.IntegerField(verbose_name="contacto")
     
     def __str__(self):
         fila=str(self.idOrganizador)+"-Nombre Organizador: "+self.nom+"-Contacto: "+str(self.contacto)

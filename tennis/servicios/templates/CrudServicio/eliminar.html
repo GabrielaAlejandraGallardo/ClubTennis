@@ -3,7 +3,8 @@
 
 {% block body %}
     <h1>Eliminar Socio {{ object.nom }}</h1>
-    <form method="post" id="fr_eliminar"> {% csrf_token %}
+    <form method="post" id="fr_eliminar">
+         {% csrf_token %}
         <p>Deseas Confirmar</p>
         <button type="submit" class="btn btn-danger">Confirmar</button>
         <a name="" id="btn-eliminar" class="btn btn-primary btn-eliminar" href="{% url 'listaServicio' %}" role="button">Cancelar</a>
