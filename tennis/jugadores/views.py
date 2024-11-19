@@ -39,7 +39,7 @@ def crear_editarJugador(request,id=0):
         return redirect('lista')
         
 def eliminar(request, id):
-    bc=Jugador.objects.get(id=id)
+    bc=Jugador.objects.get(pk=id)
     bc.delete()
     return redirect('lista')
         

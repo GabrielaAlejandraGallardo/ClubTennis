@@ -9,7 +9,7 @@ urlpatterns = [
     path('profesores/nosotros',views.nosotros,name='nosotros'),
     path('profesores/listaProfesores',views.listaProfesores,name='listaProfesores'),
     path('profesores/<int:id>/',views.crear_editarProfesores,name='crear_editarProfesores'),
-    path('profesores/eliminar/<int:id>',views.eliminar,name='eliminar'),
+    path('profesores/eliminarP/<int:id>',views.eliminarP,name='eliminarP'),
     
 
 

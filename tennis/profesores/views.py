@@ -37,7 +37,7 @@ def crear_editarProfesores(request,id=0):
             formulario.save()
         return redirect('listaProfesores')
         
-def eliminar(request, id):
+def eliminarP(request, id):
     bc=Profesor.objects.get(pk=id)
     bc.delete()
     return redirect('listaProfesores')

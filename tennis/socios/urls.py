@@ -9,7 +9,7 @@ urlpatterns = [
     path('socios/nosotros',views.nosotros,name='nosotros'),
     path('socios/listaSocio',views.listaSocio,name='listaSocio'),
     path('socios/crear_editarSocio/<int:id>/',views.crear_editarSocio,name='crear_editarSocio'),
-    path('socios/eliminar/<int:id>',views.eliminar,name='eliminar'),
+    path('socios/eliminarS/<int:id>',views.eliminarS,name='eliminarS'),
     
 
 

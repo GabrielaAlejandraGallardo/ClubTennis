@@ -35,8 +35,8 @@ def crear_editarSocio(request,id=0):
             formulario.save()
         return redirect('listaSocio')
         
-def eliminar(request, id):
-    bc=Socio.objects.get(id=id)
+def eliminarS(request, id):
+    bc=Socio.objects.get(pk=id)
     bc.delete()
     return redirect('listaSocio')
         
