@@ -61,7 +61,7 @@ Testing: https://drive.google.com/drive/folders/1esLtgh4yBusUSAfd6Z0u-SKsqr2s3pY
 
 Evaluación 15 de Noviembre de 2024: https://docs.google.com/forms/d/e/1FAIpQLSdJiUhIrzn06-7OiE0dJmMNdcyPlIfDkCKbJydk9LyON_Svdg/viewform?usp=sf_link
 
-PROGRAMACIÓN CON PYTHON PARA EL ANALISIS DE DATOS: https://cursos.desafiolatam.com/courses/pr
+PROGRAMACIÓN CON PYTHON PARA EL ANALISIS DE DATOS: https://cursos.desafiolatam.com/courses/data-analysis
 
 
 
