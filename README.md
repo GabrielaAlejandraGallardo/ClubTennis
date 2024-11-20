@@ -59,10 +59,10 @@ https://docs.google.com/document/d/13BPGjZfaw2u4iwg7DhpdUMu8e2ESNrrKeT2ixAWnzUQ/
 Testing: https://drive.google.com/drive/folders/1esLtgh4yBusUSAfd6Z0u-SKsqr2s3pYt?usp=sharing
 
 
-Evaluación 15 de Noviembre de 2024: https://docs.google.com/forms/d/e/1FAIpQLSdJiUhIrzn06-7OiE0dJmMNdcyPlIfDkCKbJydk9LyON_Svdg/viewform?usp=sf_link
+Evaluación Testing 15 de Noviembre de 2024: https://docs.google.com/forms/d/e/1FAIpQLSdJiUhIrzn06-7OiE0dJmMNdcyPlIfDkCKbJydk9LyON_Svdg/viewform?usp=sf_link
 
 PROGRAMACIÓN CON PYTHON PARA EL ANALISIS DE DATOS: https://cursos.desafiolatam.com/courses/data-analysis
 
 
 
-ogramacion-con-python-para-el-analisis-de-datos
+Evaluación Programación 20 de Noviembre:https://forms.gle/qcDT8U1Q2UTj7EF59
