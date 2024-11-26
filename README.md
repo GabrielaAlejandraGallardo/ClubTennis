@@ -66,3 +66,6 @@ PROGRAMACIÓN CON PYTHON PARA EL ANALISIS DE DATOS: https://cursos.desafiolatam.
 
 
 Evaluación Programación 20 de Noviembre:https://forms.gle/qcDT8U1Q2UTj7EF59
+
+Pasantías en linkedIn
+https://www.linkedin.com/posts/internship-jobs-for-freshers4u_interested-email-hiring-activity-7265349639082541056-sqnN?utm_source=share&utm_medium=member_desktop
