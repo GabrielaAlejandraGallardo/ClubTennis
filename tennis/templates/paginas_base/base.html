@@ -107,41 +107,51 @@
 
 
     <!-- JavaScript para el manejo de clave -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const correctPassword = '1';  // Cambia la clave aquí si es necesario
-        const passwordInput = document.getElementById('passwordInput');
-        const passwordSubmit = document.getElementById('passwordSubmit');
-        const errorMsg = document.getElementById('errorMsg');
-       
-        // Al hacer clic en el botón de acceso
-        passwordSubmit.addEventListener('click', function () {
-          if (passwordInput.value === correctPassword) {
-            // Si la clave es correcta, habilitar el acceso y cerrar el modal
-            errorMsg.style.display = 'none';
-            const protectedLinks = document.querySelectorAll('.protected-link');
-            protectedLinks.forEach(link => link.removeAttribute('data-protected'));
-            const modal = bootstrap.Modal.getInstance(document.getElementById('passwordModal'));
-            modal.hide();
-          } else {
-            // Si la clave es incorrecta, mostrar mensaje de error
-            errorMsg.style.display = 'block';
-          }
-        });
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const correctPassword = '1';  // Cambia la clave aquí si es necesario
+    const passwordInput = document.getElementById('passwordInput');
+    const passwordSubmit = document.getElementById('passwordSubmit');
+    const errorMsg = document.getElementById('errorMsg');
+    let pendingHref = null;
 
+    function intentarAcceso() {
+      if (passwordInput.value === correctPassword) {
+        errorMsg.style.display = 'none';
+        const modal = bootstrap.Modal.getInstance(document.getElementById('passwordModal'));
+        modal.hide();
+        if (pendingHref) {
+          window.location.href = pendingHref;
+        }
+      } else {
+        errorMsg.style.display = 'block';
+      }
+    }
 
-        // Mostrar el modal al intentar acceder a enlaces protegidos deshabilitados
-        document.querySelectorAll('.protected-link').forEach(link => {
-          link.addEventListener('click', function (event) {
-            if (link.getAttribute('data-protected')) {
-              event.preventDefault();  // Evita que el enlace se active
-              const modal = new bootstrap.Modal(document.getElementById('passwordModal'));
-              modal.show();  // Muestra el modal
-            }
-          });
-        });
+    // Al hacer clic en el botón de acceso
+    passwordSubmit.addEventListener('click', intentarAcceso);
+
+    // Permitir acceso con Enter en el input
+    passwordInput.addEventListener('keydown', function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        intentarAcceso();
+      }
+    });
+
+    // Mostrar el modal al intentar acceder a enlaces protegidos
+    document.querySelectorAll('.protected-link').forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();  // Siempre evita que el enlace se active
+        pendingHref = link.href; // Guarda el destino
+        passwordInput.value = ""; // Limpia el input
+        errorMsg.style.display = 'none'; // Oculta error anterior
+        const modal = new bootstrap.Modal(document.getElementById('passwordModal'));
+        modal.show();  // Muestra el modal
       });
-    </script>
+    });
+  });
+</script>
   </body>
 </html>
 

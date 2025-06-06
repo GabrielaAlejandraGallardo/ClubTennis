@@ -13,14 +13,13 @@
             <form action="" method="post"  enctype="multipart/form-data" autocomplete="off">
                 {% csrf_token %}
                
-                {{formulario.DNI|as_crispy_field}}
-                {{formulario.nom|as_crispy_field}}
-                {{formulario.fechaMes|as_crispy_field}}
+               
+                {{formulario.id|as_crispy_field}}
+                {{formulario.nom|as_crispy_field}}    
+                {{formulario.cuotaMes|as_crispy_field}}
                 {{formulario.fechap|as_crispy_field}}
-                {{formulario.tel|as_crispy_field}}
-                {{formulario.imp|as_crispy_field}}
-              
-
+                {{formulario.importe|as_crispy_field}}
+                         
              
            
                 <br>

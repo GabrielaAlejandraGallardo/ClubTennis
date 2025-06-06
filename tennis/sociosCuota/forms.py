@@ -1,21 +1,21 @@
 from socket import fromshare
 from django import forms 
-from .models import SocioCuota
+from .models import SociosCuota
 
 class SocioCuotaForm(forms.ModelForm):
   class Meta:
-        model=SocioCuota
+        model=SociosCuota
        #fields='__all__'
-        fields=('DNI','nom','fechaMes',"fechap","tel","imp")
-
+        fields=('idCuota','id','nom','cuotaMes','fechap',"importe")
         labels ={
-            "DNI" : "DNI del socio" ,
-            'nom': 'Nombre y apellido del socio:',
-            "fechaMes" : "Fecha Mes a Abonar cuota socio" ,
-            "fechap" : "Fecha pago",
-            "tel" : "Telefono",
-            "imp":"Importe",
-            
+          
+            "idCuota":" id cuota",
+            "id" : "Socio" ,
+            'nom': 'nombre y apellido del jugador:',
+            "cuotaMes":"Mes al que corresponde la cuota",
+            "fechap" : "fecha de pago" ,
+            "importe" : "valor cuota" ,
+
           #  "nummac" : "numero de macc " ,
            
                    
@@ -25,7 +25,10 @@ class SocioCuotaForm(forms.ModelForm):
     
   def __init__(self, *args, **kwargs):
         super(SocioCuotaForm,self).__init__(*args,**kwargs)
-        self.fields['DNI'].empty_label="Selecciona"
-        self.fields['nom'].required=True
-        self.fields['fechaMes'].required=False
+        
+       
+        self.fields['cuotaMes']
+        self.fields['nom'].empty_label="Selecciona"
+       # self.fields['nom'].required=True
+        self.fields['fechap'].required=False
         

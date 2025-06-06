@@ -8,35 +8,34 @@
         </div>
         <div class="card-body">
             <h4 class="card-title">Socios</h4>
+            {{ SociosCuota|length }} 
             <table class="table">
                 <thead>
                     <tr>
                     
-                        <th>DNI</th>
-                        <th>Nombre</th>
-                        <th>Pago correspondiente Mes</th>                       
-                        <th>Fecha Pago</th>
-                        <th>Telefono</th>
-                        <th>Importe</th>      
+                        <th>Nro. Registro</th>
+                        <th>Nombre</th>    
+                        <th>Mes</th>                       
+                        <th>Fecha de Pago</th>
+                        <th>importe</th>
+                           
                         
                     </tr>
                 </thead>
                 <tbody>
-                    {% for ju in socio %}
+                    {% for ju in SociosCuota %}
                     <tr>
                                        
-                        <td>{{ ju.DNI}}</td>
-                        <td>{{ ju.nom}}</td>
-                        <td>{{ ju.fechaMes}}</td>
+                        <td>{{ ju.id }}</td>     
+                        <td>{{ ju.nom}}</td>       
+                        <td>{{ ju.cuotaMes}}</td>
                         <td>{{ ju.fechap }}</td>
-                        <td>{{ ju.tel}}</td>
-                        <td>{{ ju.imp}}</td>
-                   
-                       <td>
-                            <a name="bteditar" id="bteditar" class="btn btn-info" href="{% url 'crear_editarSocioCuota' ju.id  %}" role="button">Editar</a>
-                            <a name="bteliminar" id="bteliminar" class="btn btn-danger" href="{% url 'eliminarCuotaSocio' ju.id  %}" role="button">Eliminar</a>
-                        </td>                        
-                    </tr>
+                        <td>{{ ju.importe }}</td>
+                    <td>
+                        <a name="bteditar" id="bteditar" class="btn btn-info" href="{% url 'crear_editarSocioCuota' id=ju.id.id %}" role="button">Editar</a>
+                        <a name="bteliminar" id="bteliminar" class="btn btn-danger" href="{% url 'eliminarCuotaSocio' id=ju.id.id %}" role="button">Eliminar</a>
+                    </td>                        
+                </tr>
                     {% endfor %}
                     
                 </tbody>
