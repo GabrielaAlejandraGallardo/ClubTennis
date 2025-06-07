@@ -4,15 +4,28 @@ from crispy_forms.layout import Submit
 from django.http import HttpResponse
 from .models import SociosCuota
 from .forms import SocioCuotaForm
-
-
-# Create your views here
+from collections import defaultdict
+from django.shortcuts import get_object_or_404, redirect
 
 def listaSocioCuota(request):
-    socios_cuota=SociosCuota.objects.all()
-    return render(request, 'CrudSocioCuota/listado.html', {'SociosCuota': socios_cuota})
+    socios_cuota = SociosCuota.objects.all().order_by('cuotaMes')
+    pagos_por_mes = defaultdict(list)
+    total_por_mes = defaultdict(float)
 
+    for sc in socios_cuota:
+        mes = sc.cuotaMes
+        pagos_por_mes[mes].append(sc)
+        total_por_mes[mes] += float(sc.importe)
 
+    # Convertir a lista de tuplas para el template
+    pagos_y_totales = [
+        (mes, pagos_por_mes[mes], total_por_mes[mes])
+        for mes in pagos_por_mes
+    ]
+
+    return render(request, 'CrudSocioCuota/listado.html', {
+        'pagos_y_totales': pagos_y_totales,
+    })
 def inicio(request):
     return render(request,'paginas_base/inicio.html')
 
@@ -54,8 +67,9 @@ def crear_editarSocioCuota(request, id=0):
         if formulario.is_valid():
             formulario.save()
         return redirect('listaSocioCuota')
+
+
 def eliminarCuotaSocio(request, id):
-    bsc=SociosCuota.objects.get(pk=id)
+    bsc = get_object_or_404(SociosCuota, pk=id)
     bsc.delete()
     return redirect('listaSocioCuota')
-        

@@ -9,38 +9,48 @@
         <div class="card-body">
             <h4 class="card-title">Socios</h4>
             {{ SociosCuota|length }} 
-            <table class="table">
-                <thead>
-                    <tr>
-                    
-                        <th>Nro. Registro</th>
-                        <th>Nombre</th>    
-                        <th>Mes</th>                       
-                        <th>Fecha de Pago</th>
-                        <th>importe</th>
-                           
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for ju in SociosCuota %}
-                    <tr>
-                                       
-                        <td>{{ ju.id }}</td>     
-                        <td>{{ ju.nom}}</td>       
-                        <td>{{ ju.cuotaMes}}</td>
-                        <td>{{ ju.fechap }}</td>
-                        <td>{{ ju.importe }}</td>
-                    <td>
-                        <a name="bteditar" id="bteditar" class="btn btn-info" href="{% url 'crear_editarSocioCuota' id=ju.id.id %}" role="button">Editar</a>
-                        <a name="bteliminar" id="bteliminar" class="btn btn-danger" href="{% url 'eliminarCuotaSocio' id=ju.id.id %}" role="button">Eliminar</a>
-                    </td>                        
-                </tr>
-                    {% endfor %}
-                    
-                </tbody>
-            </table>
-            
+      <table class="table">
+    <thead>
+        <tr>
+            <th>Mes</th>
+            <th>Nro. Registro</th>
+            <th>Nombre</th>
+            <th>Fecha de Pago</th>
+            <th>Importe</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for mes, pagos, total in pagos_y_totales %}
+            <tr>
+                <td rowspan="{{ pagos|length }}">{{ mes }}</td>
+                <td>{{ pagos.0.id }}</td>
+                <td>{{ pagos.0.nom }}</td>
+                <td>{{ pagos.0.fechap }}</td>
+                <td>{{ pagos.0.importe }}</td>
+                <td>
+             <a class="btn btn-info" href="{% url 'crear_editarSocioCuota' id=pagos.0.pk %}">Editar</a>
+             <a class="btn btn-danger" href="{% url 'eliminarCuotaSocio' id=pagos.0.pk %}">Eliminar</a>
+                </td>
+            </tr>
+            {% for ju in pagos|slice:"1:" %}
+            <tr>
+                <td>{{ ju.id }}</td>
+                <td>{{ ju.nom }}</td>
+                <td>{{ ju.fechap }}</td>
+                <td>{{ ju.importe }}</td>
+                <td>
+          <a class="btn btn-info" href="{% url 'crear_editarSocioCuota' id=ju.pk %}">Editar</a>
+          <a class="btn btn-danger" href="{% url 'eliminarCuotaSocio' id=ju.pk %}">Eliminar</a>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="4" class="text-right"><strong>Total {{ mes }}:</strong></td>
+                <td colspan="2"><strong>${{ total }}</strong></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
             
         </div>
         <div class="card-footer text-muted">
