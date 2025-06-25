@@ -11,7 +11,7 @@ class SocioCuotaForm(forms.ModelForm):
           
             "idCuota":" id cuota",
             "id" : "Socio" ,
-            'nom': 'nombre y apellido del jugador:',
+            'nom': 'nombre y apellido del jugador',
             "cuotaMes":"Mes al que corresponde la cuota",
             "fechap" : "fecha de pago" ,
             "importe" : "valor cuota" ,
@@ -22,13 +22,7 @@ class SocioCuotaForm(forms.ModelForm):
         
         }
         
-    
   def __init__(self, *args, **kwargs):
-        super(SocioCuotaForm,self).__init__(*args,**kwargs)
-        
-       
-        self.fields['cuotaMes']
-        self.fields['nom'].empty_label="Selecciona"
-       # self.fields['nom'].required=True
-        self.fields['fechap'].required=False
-        
+    super(SocioCuotaForm, self).__init__(*args, **kwargs)
+    self.fields['nom'].required = True
+    self.fields['fechap'].required = False

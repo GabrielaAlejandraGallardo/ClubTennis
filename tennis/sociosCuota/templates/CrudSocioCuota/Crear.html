@@ -31,7 +31,27 @@
 
             </form>           
             
-            
+            <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var selectSocio = document.querySelector('select[name="id"]');
+    var inputNom = document.querySelector('input[name="nom"]');
+    if (!selectSocio || !inputNom) {
+        console.log('No se encontró el select o el input');
+        return;
+    }
+
+    var socios = {};
+    {% for socio in socios %}
+        socios["{{ socio.pk }}"] = "{{ socio.nom }}";
+    {% endfor %}
+
+    selectSocio.addEventListener('change', function() {
+        var seleccionado = selectSocio.value;
+        inputNom.value = socios[seleccionado] || "";
+        console.log('Socio seleccionado:', seleccionado, 'Nombre:', socios[seleccionado]);
+    });
+});
+</script>
         </div>
         <div class="card-footer text-muted">
             

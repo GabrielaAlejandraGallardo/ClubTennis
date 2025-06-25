@@ -5,7 +5,8 @@ from django.http import HttpResponse
 from .models import SociosCuota
 from .forms import SocioCuotaForm
 from collections import defaultdict
-from django.shortcuts import get_object_or_404, redirect
+from socios.models import Socio  # Asegúrate de importar tu modelo Socio
+
 
 def listaSocioCuota(request):
     socios_cuota = SociosCuota.objects.all().order_by('cuotaMes')
@@ -49,7 +50,7 @@ def nosotros(request):
         if formulario.is_valid():
             formulario.save()
         return redirect('listaSocioCuota')
-    """
+    
 def crear_editarSocioCuota(request, id=0):
     if request.method == "GET":
         if id == 0:
@@ -58,6 +59,34 @@ def crear_editarSocioCuota(request, id=0):
             Socioid = get_object_or_404(SociosCuota, pk=id)
             formulario = SocioCuotaForm(instance=Socioid)
         return render(request, 'CrudSocioCuota/Crear.html', {'formulario': formulario})
+    else:
+        if id == 0:
+            formulario = SocioCuotaForm(request.POST or None, request.FILES or None)
+        else:
+            Socioid = get_object_or_404(SociosCuota, pk=id)
+            formulario = SocioCuotaForm(request.POST or None, request.FILES or None, instance=Socioid)
+        if formulario.is_valid():
+            formulario.save()
+        return redirect('listaSocioCuota')\"\"\"sumary_line
+        
+        Keyword arguments:
+        argument -- description
+        Return: return_description
+        """
+        
+
+def crear_editarSocioCuota(request, id=0):
+    socios = Socio.objects.all()
+    if request.method == "GET":
+        if id == 0:
+            formulario = SocioCuotaForm()
+        else:
+            Socioid = get_object_or_404(SociosCuota, pk=id)
+            formulario = SocioCuotaForm(instance=Socioid)
+        return render(request, 'CrudSocioCuota/Crear.html', {
+            'formulario': formulario,
+            'socios': socios,  # <-- pasa la lista de socios aquí
+        })
     else:
         if id == 0:
             formulario = SocioCuotaForm(request.POST or None, request.FILES or None)
